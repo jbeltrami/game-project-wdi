@@ -28,11 +28,21 @@ const changePWFailure = (error) => {
   console.error(error)
 }
 
+const signOutSuccess = (data) => {
+  console.log(data)
+}
+
+const signOutFailure = (error) => {
+  console.log(error)
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
   signInSuccess,
   signInFailure,
   changePWSuccess,
-  changePWFailure
+  changePWFailure,
+  signOutSuccess,
+  signOutFailure
 }

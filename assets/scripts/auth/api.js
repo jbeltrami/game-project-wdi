@@ -20,7 +20,6 @@ const signIn = (data) => {
 }
 
 const changePW = (data) => {
-  console.log('inside changePW is: ' + data)
   return $.ajax({
     url: config.apiOrigin + '/change-password/' + store.user.id,
     method: 'PATCH',
@@ -31,8 +30,20 @@ const changePW = (data) => {
   })
 }
 
+const signOut = (data) => {
+  console.log('inside signOut is: ' + data)
+  return $.ajax({
+    url: config.apiOrigin + '/sign-out/' + store.user.id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
-  changePW
+  changePW,
+  signOut
 }
