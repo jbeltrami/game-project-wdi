@@ -10,6 +10,7 @@
       <!-- Do not add `script` tags unless you know what you are doing -->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="assets/scripts/gameLogic.js"></script>
     </head>
     <body class="container-fluid">
 
@@ -53,24 +54,43 @@
         </form>
 
       <div id="container">
-        <div id="alert"></div>
-        <table id="gameboard">
+        <div id="Response"></div>
+        <div class="wrapper">
+        <div class="row">
+          <div class="col-xs-4" data-id="0"></div>
+          <div class="col-xs-4" data-id="1"></div>
+          <div class="col-xs-4" data-id="2"></div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-4" data-id="3"></div>
+          <div class="col-xs-4" data-id="4"></div>
+          <div class="col-xs-4" data-id="5"></div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-4" data-id="6"></div>
+          <div class="col-xs-4" data-id="7"></div>
+          <div class="col-xs-4" data-id="8"></div>
+        </div>
+      </div>
+        <!-- <table id="gameboard">
           <tr>
-            <td class="square" data-id="0"></td>
-            <td class="square" data-id="1"></td>
-            <td class="square" data-id="2"></td>
+            <td class="square" onClick="nextMove(this)" data-id="0"></td>
+            <td class="square" onClick="nextMove(this)" data-id="1"></td>
+            <td class="square" onClick="nextMove(this)" data-id="2"></td>
           </tr>
           <tr>
-            <td class="square" data-id="3"></td>
-            <td class="square" data-id="4"></td>
-            <td class="square" data-id="5"></td>
+            <td class="square" onClick="nextMove(this)" data-id="3"></td>
+            <td class="square" onClick="nextMove(this)" data-id="4"></td>
+            <td class="square" onClick="nextMove(this)" data-id="5"></td>
           </tr>
           <tr>
-            <td class="square" data-id="6"></td>
-            <td class="square" data-id="7"></td>
-            <td class="square" data-id="8"></td>
+            <td class="square" onClick="nextMove(this)" data-id="6"></td>
+            <td class="square" onClick="nextMove(this)" data-id="7"></td>
+            <td class="square" onClick="nextMove(this)" data-id="8"></td>
           </tr>
-        </table>
+        </table> -->
       </div>
 
 

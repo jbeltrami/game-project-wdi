@@ -22,33 +22,63 @@ body {
   margin: 25px auto;
 }
 
-.square {
+.col-xs-4 {
   font-size: 50px;
   color: black;
-}
-
-td {
   width: 100px;
   height: 100px;
   text-align: center;
   vertical-align: middle;
 }
 
-table {
+.wrapper {
   width: 405px;
   height: 405px;
 }
 
-td[data-id="1"], td[data-id="7"] {
+div[data-id="1"], div[data-id="7"] {
   border-left: 2px solid black;
   border-right: 2px solid black;
 }
 
-td[data-id="3"], td[data-id="5"] {
+div[data-id="3"], div[data-id="5"] {
   border-top: 2px solid black;
   border-bottom: 2px solid black;
 }
 
-td[data-id="4"]{
+div[data-id="4"]{
   border: 2px solid black;
 }
+
+// .square {
+//   font-size: 50px;
+//   color: black;
+// }
+
+
+//
+// td {
+//   width: 100px;
+//   height: 100px;
+//   text-align: center;
+//   vertical-align: middle;
+// }
+
+// table {
+//   width: 405px;
+//   height: 405px;
+// }
+
+// td[data-id="1"], td[data-id="7"] {
+//   border-left: 2px solid black;
+//   border-right: 2px solid black;
+// }
+//
+// td[data-id="3"], td[data-id="5"] {
+//   border-top: 2px solid black;
+//   border-bottom: 2px solid black;
+// }
+//
+// td[data-id="4"]{
+//   border: 2px solid black;
+// }
