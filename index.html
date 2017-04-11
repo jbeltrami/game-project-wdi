@@ -6,7 +6,7 @@
 
       <!-- Do not add `link` tags unless you know what you are doing -->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-
+      <link rel="stylesheet" href="assets/styles/index.scss"
       <!-- Do not add `script` tags unless you know what you are doing -->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
@@ -48,36 +48,30 @@
       <form id="sign-out">
           <fieldset>
             <legend>Sign-out!</legend>
-            <input  id="sign-out" type="submit" name="submit" value="Sign Out">
+            <input type="submit" name="submit" value="Sign Out">
           </fieldset>
         </form>
 
-
-      <h1>Example</h1>
-      <div class="container">
-        <h2>Test</h2>
-        <div class="wrapper">
-          <div class="row">
-            <div class="col-sm-4 col-xs-12 box">.col.xs-4</div>
-            <div class="col-sm-4 col-xs-12 box">.col.xs-4</div>
-            <div class="col-sm-4 col-xs-12 box">.col.xs-4</div>
-          </div>
-
-          <div class="row">
-            <div class="col-sm-4 col-xs-12 box">.col.xs-4</div>
-            <div class="col-sm-4 col-xs-12 box">.col.xs-4</div>
-            <div class="col-sm-4 col-xs-12 box">.col.xs-4</div>
-          </div>
-
-          <div class="row">
-            <div class="col-sm-4 col-xs-12 box">.col.xs-4</div>
-            <div class="col-sm-4 col-xs-12 box">.col.xs-4</div>
-            <div class="col-sm-4 col-xs-12 box">.col.xs-4</div>
-          </div>
-        </div>
-
+      <div id="container">
+        <div id="alert"></div>
+        <table id="gameboard">
+          <tr>
+            <td class="square" data-id="0"></td>
+            <td class="square" data-id="1"></td>
+            <td class="square" data-id="2"></td>
+          </tr>
+          <tr>
+            <td class="square" data-id="3"></td>
+            <td class="square" data-id="4"></td>
+            <td class="square" data-id="5"></td>
+          </tr>
+          <tr>
+            <td class="square" data-id="6"></td>
+            <td class="square" data-id="7"></td>
+            <td class="square" data-id="8"></td>
+          </tr>
+        </table>
       </div>
-
 
 
       <!-- Button trigger modal -->

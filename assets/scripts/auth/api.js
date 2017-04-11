@@ -31,7 +31,6 @@ const changePW = (data) => {
 }
 
 const signOut = (data) => {
-  console.log('inside signOut is: ' + data)
   return $.ajax({
     url: config.apiOrigin + '/sign-out/' + store.user.id,
     method: 'DELETE',
