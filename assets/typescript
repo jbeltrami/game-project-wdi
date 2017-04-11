@@ -1,0 +1,46 @@
+Script started on Tue Apr 11 09:52:11 2017
+cd s	cr	
+[?1034h~/Projects WDI/game-project-wdi/assets (master)
+$ cd scripts/
+~/Projects WDI/game-project-wdi/assets/scripts (master)
+$ ls
+config.js	example.js	index.js	store.js	templates
+~/Projects WDI/game-project-wdi/assets/scripts (master)
+$ cd ../..
+~/Projects WDI/game-project-wdi (master)
+$ ls
+CONTRIBUTING.md	README.md	favicon.ico	index.html	node_modules
+Gruntfile.js	STYLE.md	forms.md	index.js	package.json
+LICENSE		assets		grunt		lib		spec
+~/Projects WDI/game-project-wdi (master)
+$ cd lib
+~/Projects WDI/game-project-wdi/lib (master)
+$ ls
+add-nested-value.js	parse-nested-query.js
+get-form-fields.js	set-api-origin.js
+~/Projects WDI/game-project-wdi/lib (master)
+$ cd ..
+~/Projects WDI/game-project-wdi (master)
+$ gt[Krunt e[Kdeploy
+[4mRunning "shell:git-is-clean" (shell) task[24m
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	assets/typescript
+
+nothing added to commit but untracked files present (use "git add" to track)
+[33mWarning: Command failed: test -z "$(git status --porcelain)"  || (git status && false)
+ Use --force to continue.[39m
+
+[31mAborted due to warnings.[39m
+
+
+[4mExecution Time[24m[90m (2017-04-11 09:54:11 UTC-4)[39m
+loading tasks         [34m8s[39m  [34m▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 99%[39m
+shell:git-is-clean  [34m85ms[39m  [34m▇ 1%[39m
+[35mTotal 8.1s[39m
+
+~/Projects WDI/game-project-wdi (master)
+$ git sta
