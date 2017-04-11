@@ -20,9 +20,19 @@ const signInFailure = (error) => {
   console.log(error)
 }
 
+const changePWSuccess = (data) => {
+  console.log(data)
+}
+
+const changePWFailure = (error) => {
+  console.error(error)
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
   signInSuccess,
-  signInFailure
+  signInFailure,
+  changePWSuccess,
+  changePWFailure
 }
