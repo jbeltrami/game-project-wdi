@@ -15,20 +15,37 @@ const changeMessage = (txt) => {
 const startGame = () => {
   changeMessage(turn + ' is the first player')
 }
+// code works until this line
 
-// function nextMove (elementId) {
-//   if (elementId.textContent === '') {
-//     elementId.textContent = document.turn
-//     changeTurn()
-//   } else {
-//     changeResponse('pick another square, dummy!')
-//   }
-// }
+// click event that takes an element of boardObj and reassings its value to
+// whatever the variable turn is at the moment.
+// This function needs to call nextMove, passing in the index at the end.
+
+const click = $(boardObj)
+
+const nextMove = (index) => {
+  if (boardObj[index].textContent === '') {
+    boardObj[index].textContent = turn
+    changeTurn()
+  } else {
+    changeMessage('please, pick another square')
+  }
+}
+
+const changeTurn = () => {
+  if (turn === 'X') {
+    turn = 'O'
+  } else {
+    turn = 'X'
+  } changeMessage('It is ' + turn + "'s turn now")
+}
 
 module.exports = {
   boardObj,
   changeMessage,
-  startGame
+  startGame,
+  nextMove,
+  changeTurn
 }
 
 //
@@ -36,23 +53,6 @@ module.exports = {
 //   $('.data-id').on('click', nextMove())
 // })
 //
-// function nextMove (elementId) {
-//   if (elementId.textContent === '') {
-//     elementId.textContent = document.turn
-//     changeTurn()
-//   } else {
-//     changeResponse('pick another square, dummy!')
-//   }
-// }
-//
-// function changeTurn () {
-//   if (document.turn === 'X') {
-//     document.turn = 'O'
-//   } else {
-//     document.turn = 'X'
-//   }
-//   changeResponse('it\'s ' + document.turn + '\'s turn now')
-// }
 
 // if (table[0] === table[1] && table[1] === table[2] && table[1] !== 0) {
 //   console.log('You won on the first row!')
