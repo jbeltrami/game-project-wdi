@@ -5,8 +5,12 @@
 let turn = 'X'
 
 $('.col-xs-4').on('click', function () {
-  $(this).text(turn)
-  changeTurn()
+  if (this.textContent === '') {
+    $(this).text(turn)
+    changeTurn()
+  } else {
+    changeMessage('please, pick another square')
+  }
 })
 
 const changeMessage = (txt) => {
@@ -17,29 +21,6 @@ const changeMessage = (txt) => {
 const startGame = () => {
   changeMessage(turn + ' is the first player')
 }
-// code works until this line
-
-// click event that takes an element of boardObj and reassings its value to
-// whatever the variable turn is at the moment.
-// This function needs to call nextMove, passing in the index at the end.
-
-// const changeBoard = () => {
-//   $('boardObj[0]').text(turn)
-// }
-//
-// const click = () => {
-//   $('boardObj[0]').on('click', changeBoard)
-// // console.log($(boardObj[0]).text(turn))
-// }
-
-// const nextMove = (index) => {
-//   if (boardObj[index].textContent === '') {
-//     boardObj[index].textContent = turn
-//     changeTurn()
-//   } else {
-//     changeMessage('please, pick another square')
-//   }
-// }
 
 const changeTurn = () => {
   if (turn === 'X') {
@@ -52,7 +33,6 @@ const changeTurn = () => {
 module.exports = {
   changeMessage,
   startGame,
-  // nextMove,
   changeTurn
 }
 
