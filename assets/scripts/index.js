@@ -18,3 +18,14 @@ $(() => {
 
 // use require without a reference to ensure a file is bundled
 require('./example')
+
+// code starts here
+
+const gameLogic = require('./gameLogic.js')
+
+gameLogic.startGame()
+// console.log('This is my changeMessage: ' + gameLogic.changeMessage)
+
+// gameLogic.boardObj[2].innerHTML = 'O'
+
+module.export = authEvents

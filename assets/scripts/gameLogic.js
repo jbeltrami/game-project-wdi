@@ -1,38 +1,58 @@
 'use strict'
 
 // Where my code starts
-const table = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+// const elementId = document.getElementsByClassName('col-xs-4')
+let turn = 'X'
 
-function startGame () {
-  document.turn = 'X'
-  changeResponse(document.turn + ' always gets to start.  sorry bruh')
+const boardObj = $('.col-xs-4')
+console.log('this is elementId: ' + boardObj)
+
+const changeMessage = (txt) => {
+  let element = $('#message')[0]
+  $(element).text(txt)
 }
 
-function changeResponse (txt) {
-  document.getElementById('Response').textContent = txt
+const startGame = () => {
+  changeMessage(turn + ' is the first player')
 }
 
-const elementId = document.getElementById('gameboard').dataset.id
+// function nextMove (elementId) {
+//   if (elementId.textContent === '') {
+//     elementId.textContent = document.turn
+//     changeTurn()
+//   } else {
+//     changeResponse('pick another square, dummy!')
+//   }
+// }
 
-$('data-id').on('click', nextMove())
-
-function nextMove (elementId) {
-  if (elementId.textContent === '') {
-    elementId.textContent = document.turn
-    changeTurn()
-  } else {
-    changeResponse('pick another square, dummy!')
-  }
+module.exports = {
+  boardObj,
+  changeMessage,
+  startGame
 }
 
-function changeTurn () {
-  if (document.turn === 'X') {
-    document.turn = 'O'
-  } else {
-    document.turn = 'X'
-  }
-  changeResponse('it\'s ' + document.turn + '\'s turn now')
-}
+//
+// $(() => {
+//   $('.data-id').on('click', nextMove())
+// })
+//
+// function nextMove (elementId) {
+//   if (elementId.textContent === '') {
+//     elementId.textContent = document.turn
+//     changeTurn()
+//   } else {
+//     changeResponse('pick another square, dummy!')
+//   }
+// }
+//
+// function changeTurn () {
+//   if (document.turn === 'X') {
+//     document.turn = 'O'
+//   } else {
+//     document.turn = 'X'
+//   }
+//   changeResponse('it\'s ' + document.turn + '\'s turn now')
+// }
 
 // if (table[0] === table[1] && table[1] === table[2] && table[1] !== 0) {
 //   console.log('You won on the first row!')
