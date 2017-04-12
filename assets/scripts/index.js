@@ -25,7 +25,6 @@ const gameLogic = require('./gameLogic.js')
 
 gameLogic.startGame()
 
-console.log(gameLogic.boardObj)
 // console.log('This is my changeMessage: ' + gameLogic.changeMessage)
 
 // gameLogic.boardObj[2].innerHTML = 'O'
