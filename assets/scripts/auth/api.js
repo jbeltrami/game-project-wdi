@@ -61,11 +61,33 @@ const getGames = (data) => {
   })
 }
 
+const getGame = (id) => {
+  return $.ajax({
+    url: config.apiOrigin + '/games/' + id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const updateGame = (id) => {
+  return $.ajax({
+    url: config.apiOrigin + '/games/' + id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   changePW,
   signOut,
   startGame,
-  getGames
+  getGames,
+  getGame,
+  updateGame
 }

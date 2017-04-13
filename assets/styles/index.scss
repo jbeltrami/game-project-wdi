@@ -20,6 +20,7 @@ body {
   height: 400px;
   display: block;
   margin: 25px auto;
+  position: relative;
 }
 
 .col-xs-4 {
@@ -45,35 +46,12 @@ div[data-id="4"]{
   border: 2px solid black;
 }
 
-// .square {
-//   font-size: 50px;
-//   color: black;
-// }
+#message {
+  display: block;
+  text-align: center;
+  font-size: 30px;
+}
 
-
-//
-// td {
-//   width: 100px;
-//   height: 100px;
-//   text-align: center;
-//   vertical-align: middle;
-// }
-
-// table {
-//   width: 405px;
-//   height: 405px;
-// }
-
-// td[data-id="1"], td[data-id="7"] {
-//   border-left: 2px solid black;
-//   border-right: 2px solid black;
-// }
-//
-// td[data-id="3"], td[data-id="5"] {
-//   border-top: 2px solid black;
-//   border-bottom: 2px solid black;
-// }
-//
-// td[data-id="4"]{
-//   border: 2px solid black;
-// }
+#restart {
+  display: none;
+}

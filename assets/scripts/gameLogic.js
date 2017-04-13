@@ -17,11 +17,6 @@ $('.col-xs-4').on('click', function () {
   }
 })
 
-const gameOver = () => {
-  changeMessage(turn + ' Won!')
-  $('.col-xs-4').unbind('click')
-}
-
 const changeMessage = (txt) => {
   const element = $('#message')[0]
   $(element).text(txt)
@@ -45,18 +40,15 @@ const isEmpty = function (element) {
 
 const checkDraw = function () {
   const result = gameArray.some(isEmpty)
-  console.log(result)
   if (result === false) {
     changeMessage('It is a draw!')
   }
 }
 
-// const checkDraw = function () {
-//   if ($('.col-xs-4') !== '') {
-//     changeMessage('It is a Draw!')
-//     $('.col-xs-4').unbind('click')
-//   }
-// }
+const gameOver = () => {
+  changeMessage(turn + ' Won!')
+  $('.col-xs-4').unbind('click')
+}
 
 const checkWinner = function () {
   if ($('.col-xs-4')[0].textContent === $('.col-xs-4')[1].textContent && $('.col-xs-4')[1].textContent === $('.col-xs-4')[2].textContent && $('.col-xs-4')[1].textContent !== '') {
@@ -78,6 +70,10 @@ const checkWinner = function () {
   } else {
     changeTurn()
   }
+}
+
+const restart = function () {
+
 }
 
 module.exports = {
