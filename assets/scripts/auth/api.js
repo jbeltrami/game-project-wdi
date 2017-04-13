@@ -40,9 +40,20 @@ const signOut = (data) => {
   })
 }
 
+const startGame = (data) => {
+  return $.ajax({
+    url: config.apiOrigin + '/games/',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   changePW,
-  signOut
+  signOut,
+  startGame
 }
