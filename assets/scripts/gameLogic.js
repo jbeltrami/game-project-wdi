@@ -13,6 +13,11 @@ $('.col-xs-4').on('click', function () {
   }
 })
 
+const gameOver = () => {
+  changeMessage(turn + ' Won!')
+  $('.col-xs-4').unbind('click')
+}
+
 const changeMessage = (txt) => {
   const element = $('#message')[0]
   $(element).text(txt)
@@ -32,21 +37,21 @@ const changeTurn = () => {
 
 const checkWinner = function () {
   if ($('.col-xs-4')[0].textContent === $('.col-xs-4')[1].textContent && $('.col-xs-4')[1].textContent === $('.col-xs-4')[2].textContent && $('.col-xs-4')[1].textContent !== '') {
-    return changeMessage(turn + ' won on the first row!')
+    return gameOver()
   } else if ($('.col-xs-4')[3].textContent === $('.col-xs-4')[4].textContent && $('.col-xs-4')[4].textContent === $('.col-xs-4')[5].textContent && $('.col-xs-4')[3].textContent !== '') {
-    return changeMessage(turn + ' won on the second row!')
+    return gameOver()
   } else if ($('.col-xs-4')[6].textContent === $('.col-xs-4')[7].textContent && $('.col-xs-4')[7].textContent === $('.col-xs-4')[8].textContent && $('.col-xs-4')[6].textContent !== '') {
-    return changeMessage(turn + ' won on the third row!')
+    return gameOver()
   } else if ($('.col-xs-4')[0].textContent === $('.col-xs-4')[3].textContent && $('.col-xs-4')[3].textContent === $('.col-xs-4')[6].textContent && $('.col-xs-4')[0].textContent !== '') {
-    return changeMessage(turn + ' won on the first column!')
+    return gameOver()
   } else if ($('.col-xs-4')[1].textContent === $('.col-xs-4')[4].textContent && $('.col-xs-4')[4].textContent === $('.col-xs-4')[7].textContent && $('.col-xs-4')[1].textContent !== '') {
-    return changeMessage(turn + ' won on the second column!')
+    return gameOver()
   } else if ($('.col-xs-4')[2].textContent === $('.col-xs-4')[5].textContent && $('.col-xs-4')[5].textContent === $('.col-xs-4')[8].textContent && $('.col-xs-4')[2].textContent !== '') {
-    return changeMessage(turn + ' won on the third column')
+    return gameOver()
   } else if ($('.col-xs-4')[0].textContent === $('.col-xs-4')[4].textContent && $('.col-xs-4')[4].textContent === $('.col-xs-4')[8].textContent && $('.col-xs-4')[0].textContent !== '') {
-    return changeMessage(turn + ' won on the right to left diagonal')
+    return gameOver()
   } else if ($('.col-xs-4')[2].textContent === $('.col-xs-4')[4].textContent && $('.col-xs-4')[4].textContent === $('.col-xs-4')[6].textContent && $('.col-xs-4')[2].textContent !== '') {
-    return changeMessage(turn + ' won on the left to right diagonal')
+    return gameOver()
   } else {
     changeTurn()
   }
