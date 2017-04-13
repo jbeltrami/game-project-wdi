@@ -50,10 +50,22 @@ const startGame = (data) => {
   })
 }
 
+const getGames = (data) => {
+  return $.ajax({
+    url: config.apiOrigin + '/games/',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   changePW,
   signOut,
-  startGame
+  startGame,
+  getGames
 }

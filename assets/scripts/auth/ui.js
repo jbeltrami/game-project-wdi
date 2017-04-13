@@ -44,6 +44,14 @@ const startGameFailure = (error) => {
   console.log(error)
 }
 
+const getGamesSuccess = (data) => {
+  console.log(data)
+}
+
+const getGamesFailure = (error) => {
+  console.log(error)
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -54,5 +62,7 @@ module.exports = {
   signOutSuccess,
   signOutFailure,
   startGameSuccess,
-  startGameFailure
+  startGameFailure,
+  getGamesSuccess,
+  getGamesFailure
 }

@@ -40,10 +40,17 @@ const onSignOut = function (event) {
 const onStartGame = function (event) {
   const data = getFormFields(event.target)
   event.preventDefault()
-  debugger
   api.startGame(data)
     .then(ui.startGameSuccess)
     .catch(ui.startGameFailure)
+}
+
+const onGetGames = function (event) {
+  const data = getFormFields(event.target)
+  event.preventDefault()
+  api.getGames(data)
+    .then(ui.getGamesSuccess)
+    .catch(ui.getGamesFailure)
 }
 
 const addHandlers = () => {
@@ -52,6 +59,7 @@ const addHandlers = () => {
   $('#changepw').on('submit', onChangePW)
   $('#sign-out').on('submit', onSignOut)
   $('#start-game').on('submit', onStartGame)
+  $('#get-games').on('submit', onGetGames)
 }
 
 module.exports = {
