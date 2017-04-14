@@ -28,3 +28,7 @@ event, work on Restart button)
 unfinished games and print that for the user to see)
 - Styling (Add colors, change text, create boxes for messages)
 - Replacing console.log functions on assets/scripts/auth/ui.js file
+
+#WIREFRAME AND USERSTORIES:
+- http://imgur.com/vPRhhgi
+- http://imgur.com/RJp3Owi
