@@ -4,6 +4,10 @@
 // const elementId = document.getElementsByClassName('col-xs-4')
 let turn = 'X'
 
+const showRestart = function () {
+  $('#restart').css('visibility', 'visible')
+}
+
 const gameArray = ['', '', '', '', '', '', '', '', '']
 
 $('.col-xs-4').on('click', function () {
@@ -42,12 +46,14 @@ const checkDraw = function () {
   const result = gameArray.some(isEmpty)
   if (result === false) {
     changeMessage('It is a draw!')
+    showRestart()
   }
 }
 
 const gameOver = () => {
   changeMessage(turn + ' Won!')
   $('.col-xs-4').unbind('click')
+  showRestart()
 }
 
 const checkWinner = function () {
@@ -70,10 +76,6 @@ const checkWinner = function () {
   } else {
     changeTurn()
   }
-}
-
-const restart = function () {
-
 }
 
 module.exports = {
