@@ -4,11 +4,30 @@
 // const elementId = document.getElementsByClassName('col-xs-4')
 let turn = 'X'
 
+const gameArray = ['', '', '', '', '', '', '', '', '']
+
 const showRestart = function () {
   $('#restart').css('visibility', 'visible')
 }
 
-const gameArray = ['', '', '', '', '', '', '', '', '']
+$('#restart').on('click', function () {
+  $('.col-xs-4').text('')
+  clickEvent()
+  $('#restart').css('visibility', 'hidden')
+})
+
+const clickEvent = function () {
+  $('.col-xs-4').on('click', function () {
+    if (this.textContent === '') {
+      $(this).text(turn)
+      gameArray[$(this).data('id')] = turn
+      checkWinner()
+      checkDraw()
+    } else {
+      changeMessage('please, pick another square')
+    }
+  })
+}
 
 $('.col-xs-4').on('click', function () {
   if (this.textContent === '') {
