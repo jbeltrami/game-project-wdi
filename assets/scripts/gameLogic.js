@@ -4,7 +4,7 @@
 // const elementId = document.getElementsByClassName('col-xs-4')
 let turn = 'X'
 
-const gameArray = ['', '', '', '', '', '', '', '', '']
+let gameArray = ['', '', '', '', '', '', '', '', '']
 
 const showRestart = function () {
   $('#restart').css('visibility', 'visible')
@@ -13,6 +13,7 @@ const showRestart = function () {
 $('#restart').on('click', function () {
   $('.col-xs-4').text('')
   clickEvent()
+  gameArray = ['', '', '', '', '', '', '', '', '']
   $('#restart').css('visibility', 'hidden')
 })
 
