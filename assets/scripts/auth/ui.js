@@ -3,7 +3,8 @@
 const store = require('../store.js')
 
 const signUpSuccess = (data) => {
-  console.log(data)
+  $('#auth-message').text('Sign-up succesfull. Please Sign In to start the game')
+  $('#sign-up').css('visibility', 'hidden')
 }
 
 const signUpFailure = (error) => {
