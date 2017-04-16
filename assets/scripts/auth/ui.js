@@ -7,18 +7,23 @@ const signUpSuccess = (data) => {
   $('#sign-up').css('visibility', 'hidden')
 }
 
-const signUpFailure = (error) => {
-  console.error(error)
+const signUpFailure = (data) => {
+  $('#auth-message').text('Please provide a different combination of username and password')
 }
 
 const signInSuccess = (data) => {
-  console.log(data)
+  $('#changepw').css('visibility', 'visible')
+  $('#sign-out').css('visibility', 'visible')
+  $('#start-game').css('visibility', 'visible')
+  $('#get-games').css('visibility', 'visible')
+  $('#get-game').css('visibility', 'visible')
+  $('#auth-message').text('Welcome! You are now ready to play')
   // store the user object
   store.user = data.user
 }
 
-const signInFailure = (error) => {
-  console.log(error)
+const signInFailure = (data) => {
+  $('#auth-message').text('Please provide a different combination of username and password')
 }
 
 const changePWSuccess = (data) => {
