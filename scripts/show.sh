@@ -1,4 +1,4 @@
-curl --include --request GET http://localhost:4741/games/${ID}
+curl --include --request GET https://ga-wdi-boston.herokuapp.com/games/${ID}
   --header "Content-Type: application/json" \
   --data '{
   "game": {
