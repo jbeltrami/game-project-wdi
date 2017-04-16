@@ -10,6 +10,13 @@ const showRestart = function () {
   $('#restart').css('visibility', 'visible')
 }
 
+// start game button functionality
+$('#start-game').on('click', function () {
+  $('#container').css('visibility', 'visible')
+  $('#message').css('visibility', 'visible')
+})
+
+// restart button functionality
 $('#restart').on('click', function () {
   $('.col-xs-4').text('')
   clickEvent()

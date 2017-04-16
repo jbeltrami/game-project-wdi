@@ -11,18 +11,6 @@ body {
   color: $font-color;
 }
 
-.box {
-  border: 1px solid $font-color;
-}
-
-#container {
-  width: 400px;
-  height: 400px;
-  display: block;
-  margin: 25px auto;
-  position: relative;
-}
-
 .col-xs-4 {
   font-size: 50px;
   color: black;
@@ -46,10 +34,56 @@ div[data-id="4"]{
   border: 2px solid black;
 }
 
+.wrapper {
+  display: inline;
+  float:left;
+}
+
+//Buttons
+
+#sign-in {
+
+}
+
+#changepw {
+visibility: hidden;
+}
+#sign-out {
+visibility: hidden;
+}
+
+#start-game {
+visibility: hidden;
+}
+
+#get-games {
+visibility: hidden;
+}
+
+#get-game {
+visibility: hidden;
+}
+
+#auth-message {
+  display: block;
+  text-align: center;
+  font-size: 30px;
+}
+
+#container {
+  width: 400px;
+  height: 400px;
+  display: block;
+  margin: 25px auto;
+  position: relative;
+  visibility: hidden;
+}
+
 #message {
   display: block;
   text-align: center;
   font-size: 30px;
+  visibility: hidden;
 }
 
 #restart {
