@@ -1,6 +1,6 @@
 #!/bin/bash
 
-curl --include --request PATCH http://localhost:4741/change-password/$ID \
+curl --include --request PATCH https://ga-wdi-boston.herokuapp.com/$ID \
 # curl --include --request PATCH http://localhost:4741/change-password/:id \
   --header "Authorization: Token token=$TOKEN" \
   --header "Content-Type: application/json" \

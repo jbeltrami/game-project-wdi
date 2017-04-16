@@ -1,5 +1,5 @@
 #!bin/bash
-curl http://localhost:4741/games/${ID} \
+curl https://ga-wdi-boston.herokuapp.com/games/${ID} \
 --include \
 --request PATCH \
 --header "Authorization: Token token=$TOKEN" \
