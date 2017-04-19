@@ -15,6 +15,10 @@ $('#start-game').on('click', function () {
   $('#container').css('visibility', 'visible')
   $('#message').css('visibility', 'visible')
   $('#auth-message').css('visibility', 'hidden')
+  gameArray = ['', '', '', '', '', '', '', '', '']
+  $('.col-xs-4').text('')
+  turn = 'X'
+  startGame()
 })
 
 // restart button functionality
@@ -23,6 +27,8 @@ $('#restart').on('click', function () {
   clickEvent()
   gameArray = ['', '', '', '', '', '', '', '', '']
   $('#restart').css('visibility', 'hidden')
+  turn = 'X'
+  startGame()
 })
 
 const clickEvent = function () {
