@@ -73,7 +73,7 @@ const getGame = (id) => {
 
 // const updateGame = (id) => {
 //   return $.ajax({
-//     url: config.apiOrigin + '/games/' + id,
+//     url: config.apiOrigin + '/games/' + store.game.id,
 //     method: 'PATCH',
 //     headers: {
 //       Authorization: 'Token token=' + store.user.token

@@ -14,6 +14,7 @@ const showRestart = function () {
 $('#start-game').on('click', function () {
   $('#container').css('visibility', 'visible')
   $('#message').css('visibility', 'visible')
+  $('#auth-message').css('visibility', 'hidden')
 })
 
 // restart button functionality
@@ -37,6 +38,7 @@ const clickEvent = function () {
   })
 }
 
+// Board click, JQuery functionality
 $('.col-xs-4').on('click', function () {
   if (this.textContent === '') {
     $(this).text(turn)
@@ -48,6 +50,7 @@ $('.col-xs-4').on('click', function () {
   }
 })
 
+// Visual interaction with the user. Change the messages.
 const changeMessage = (txt) => {
   const element = $('#message')[0]
   $(element).text(txt)
