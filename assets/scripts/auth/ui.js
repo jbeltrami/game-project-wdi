@@ -8,10 +8,13 @@ const signUpSuccess = (data) => {
 }
 
 const signUpFailure = (data) => {
-  $('#auth-message').text('Please provide a different combination of username and password')
+  // $('#auth-message').text('Please provide a different combination of username and password')
+  console.log(data)
 }
 
+// makes all the buttons appear.
 const signInSuccess = (data) => {
+  $('#sign-up').css('visibility', 'hidden')
   $('#changepw').css('visibility', 'visible')
   $('#sign-out').css('visibility', 'visible')
   $('#start-game').css('visibility', 'visible')
@@ -23,6 +26,7 @@ const signInSuccess = (data) => {
 }
 
 const signInFailure = (data) => {
+  console.log(data)
   $('#auth-message').text('Please provide a different combination of username and password')
 }
 
@@ -35,7 +39,12 @@ const changePWFailure = (error) => {
 }
 
 const signOutSuccess = (data) => {
-  console.log(data)
+  $('#changepw').css('visibility', 'hidden')
+  $('#sign-out').css('visibility', 'hidden')
+  $('#start-game').css('visibility', 'hidden')
+  $('#get-games').css('visibility', 'hidden')
+  $('#get-game').css('visibility', 'hidden')
+  $('#auth-message').text('Welcome! You are now ready to play')
 }
 
 const signOutFailure = (error) => {
@@ -43,7 +52,9 @@ const signOutFailure = (error) => {
 }
 
 const startGameSuccess = (data) => {
+  store.game = data.game
   console.log(data)
+  console.log(data.game)
 }
 
 const startGameFailure = (error) => {
