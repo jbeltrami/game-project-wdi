@@ -24,6 +24,7 @@ require('./example')
 const gameLogic = require('./gameLogic.js')
 
 gameLogic.startGame()
+gameLogic.clickEvent()
 
 // console.log('This is my changeMessage: ' + gameLogic.changeMessage)
 

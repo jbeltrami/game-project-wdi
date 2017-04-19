@@ -55,7 +55,6 @@ const signOutFailure = (data) => {
 const startGameSuccess = (data) => {
   // store the game information required to patch
   store.game = data.game
-  console.log(data.game)
 }
 
 const startGameFailure = (error) => {
