@@ -65,6 +65,7 @@ const changeMessage = (txt) => {
 
 const startGame = () => {
   changeMessage(turn + ' is the first player')
+  clickEvent()
 }
 
 const changeTurn = () => {
