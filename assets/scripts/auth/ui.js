@@ -26,7 +26,7 @@ const signInSuccess = (data) => {
 }
 
 const signInFailure = (data) => {
-  $('#auth-message').text('Please provide a different combination of username and password.')
+  $('#auth-message').text('Please provide a different combination of username and password. Make sure you have already signed-up')
 }
 
 const changePWSuccess = (data) => {
@@ -54,23 +54,31 @@ const signOutFailure = (data) => {
 
 const startGameSuccess = (data) => {
   // store the game information required to patch
+  // the ui has been taken care of in gameLogic.js
   store.game = data.game
 }
 
-const startGameFailure = (error) => {
-  console.log(error)
+const startGameFailure = (data) => {
+  $('#auth-message').text('Please try again.')
 }
 
 const getGamesSuccess = (data) => {
-  console.log(data)
+  console.log(data.games.length)
+  console.log(data.games)
+  $('#auth-message').text('You have played ' + data.games.length + ' games.')
 }
 
-const getGamesFailure = (error) => {
-  console.log(error)
+const getGamesFailure = (data) => {
+  $('#auth-message').text('Please try again. Check your internet connection')
 }
 
 const getGameSuccess = (data) => {
-  console.log(data)
+  // console.log(data)
+  if (data.game.over) {
+    $('#auth-message').text('You have finished that game successfully')
+  } else {
+    $('#auth-message').text('That game was not finished!')
+  }
 }
 
 const getGameFailure = (error) => {

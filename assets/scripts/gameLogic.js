@@ -16,7 +16,7 @@ const showRestart = function () {
 $('#start-game').on('click', function () {
   $('#container').css('visibility', 'visible')
   $('#message').css('visibility', 'visible')
-  $('#auth-message').css('visibility', 'hidden')
+  $('#auth-message').text('')
   gameArray = ['', '', '', '', '', '', '', '', '']
   $('.col-xs-4').text('')
   turn = 'X'
@@ -25,6 +25,7 @@ $('#start-game').on('click', function () {
 
 // restart button functionality
 $('#restart').on('click', function () {
+  $('#auth-message').text('')
   $('.col-xs-4').text('')
   clickEvent()
   gameArray = ['', '', '', '', '', '', '', '', '']
@@ -36,6 +37,7 @@ $('#restart').on('click', function () {
 // Board click, JQuery functionality
 const clickEvent = function () {
   $('.col-xs-4').on('click', function () {
+    $('#auth-message').text('')
     const update = {cell: {index: $(this).data('id'), value: turn}}
 
     if (this.textContent === '') {
