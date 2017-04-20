@@ -45,6 +45,9 @@ const signOutSuccess = (data) => {
   $('#start-game').css('visibility', 'hidden')
   $('#get-games').css('visibility', 'hidden')
   $('#get-game').css('visibility', 'hidden')
+  $('#container').css('visibility', 'hidden')
+  $('#message').css('visibility', 'hidden')
+  $('#restart').css('visibility', 'hidden')
   $('#auth-message').text('Good-bye!')
 }
 
