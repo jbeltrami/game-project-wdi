@@ -25,6 +25,7 @@ $('#start-game').on('click', function () {
 
 // restart button functionality
 $('#restart').on('click', function () {
+  $('#auth-message').text('')
   $('.col-xs-4').text('')
   clickEvent()
   gameArray = ['', '', '', '', '', '', '', '', '']
