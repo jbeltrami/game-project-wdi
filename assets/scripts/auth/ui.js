@@ -87,15 +87,15 @@ const getGamesFailure = (data) => {
 
 const getGameSuccess = (data) => {
   // console.log(data)
-  if (data.game.over) {
-    $('#auth-message').text('You have finished that game successfully')
-  } else {
-    $('#auth-message').text('That game was not finished!')
-  }
+  // if (data.game.over) {
+  //   $('#auth-message').text('You have finished that game successfully')
+  // } else {
+  //   $('#auth-message').text('That game was not finished!')
+  $('#auth-message').text("You've played that game before!")
 }
 
-const getGameFailure = (error) => {
-  console.log(error)
+const getGameFailure = (data) => {
+  $('#auth-message').text('Please provide a different ID')
 }
 
 const updateGameSuccess = (data) => {
