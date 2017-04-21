@@ -89,6 +89,7 @@ const checkDraw = function () {
   if (result === false) {
     changeMessage('It is a draw!')
     showRestart()
+    return
   }
 }
 
