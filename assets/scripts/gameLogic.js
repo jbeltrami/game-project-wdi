@@ -49,6 +49,7 @@ const clickEvent = function () {
       checkWinner()
       if (win) {
         update.over = true
+        return
       } else {
         checkDraw()
         changeTurn()
