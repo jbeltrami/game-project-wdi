@@ -92,35 +92,35 @@ const checkWinner = function () {
   if (gameArray[0] === gameArray[1] && gameArray[1] === gameArray[2] && gameArray[1] !== '') {
     win = true
     gameOver()
-    return
+    // return
   } else if (gameArray[3] === gameArray[4] && gameArray[4] === gameArray[5] && gameArray[3] !== '') {
     win = true
     gameOver()
-    return
+    // return
   } else if (gameArray[6] === gameArray[7] && gameArray[7] === gameArray[8] && gameArray[6] !== '') {
     win = true
     gameOver()
-    return
+    // return
   } else if (gameArray[0] === gameArray[3] && gameArray[3] === gameArray[6] && gameArray[0] !== '') {
     win = true
     gameOver()
-    return
+    // return
   } else if (gameArray[1] === gameArray[4] && gameArray[4] === gameArray[7] && gameArray[1] !== '') {
     win = true
     gameOver()
-    return
+    // return
   } else if (gameArray[2] === gameArray[5] && gameArray[5] === gameArray[8] && gameArray[2] !== '') {
     win = true
     gameOver()
-    return
+    // return
   } else if (gameArray[0] === gameArray[4] && gameArray[4] === gameArray[8] && gameArray[0] !== '') {
     win = true
     gameOver()
-    return
+    // return
   } else if (gameArray[2] === gameArray[4] && gameArray[4] === gameArray[6] && gameArray[2] !== '') {
     win = true
     gameOver()
-    return
+    // return
   }
 }
 
