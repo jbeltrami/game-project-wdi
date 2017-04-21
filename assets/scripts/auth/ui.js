@@ -66,9 +66,19 @@ const startGameFailure = (data) => {
 }
 
 const getGamesSuccess = (data) => {
-  console.log(data.games.length)
-  console.log(data.games)
-  $('#auth-message').text('You have played ' + data.games.length + ' games.')
+  const games = data.games
+  const gamesIds = []
+  // console.log(data.games.length)
+  // console.log(data.games)
+  const idGetter = function () {
+    for (let i = 0; i < games.length; i++) {
+      gamesIds.push(games[i].id)
+    }
+  }
+  idGetter()
+  // console.log(gamesIds)
+  // console.log(data.games[0].id)
+  $('#auth-message').text('You have played ' + data.games.length + ' games. Their IDs are: ' + gamesIds)
 }
 
 const getGamesFailure = (data) => {

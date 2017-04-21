@@ -17,6 +17,7 @@ $('#start-game').on('click', function () {
   $('#container').css('visibility', 'visible')
   $('#message').css('visibility', 'visible')
   $('#auth-message').text('')
+  $('#restart').css('visibility', 'hidden')
   gameArray = ['', '', '', '', '', '', '', '', '']
   $('.col-xs-4').text('')
   turn = 'X'
@@ -27,11 +28,11 @@ $('#start-game').on('click', function () {
 $('#restart').on('click', function () {
   $('#auth-message').text('')
   $('.col-xs-4').text('')
-  clickEvent()
-  gameArray = ['', '', '', '', '', '', '', '', '']
-  $('#restart').css('visibility', 'hidden')
   turn = 'X'
-  startGame()
+  gameArray = ['', '', '', '', '', '', '', '', '']
+  changeMessage(turn + ' is the first player')
+  clickEvent()
+  $('#restart').css('visibility', 'hidden')
 })
 
 // Board click, JQuery functionality
@@ -65,6 +66,7 @@ const changeMessage = (txt) => {
 
 const startGame = () => {
   changeMessage(turn + ' is the first player')
+  clickEvent()
 }
 
 const changeTurn = () => {
