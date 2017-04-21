@@ -5,7 +5,7 @@ const updateGame = require('./auth/api.js').updateGame
 // Where my code starts
 // const elementId = document.getElementsByClassName('col-xs-4')
 let turn = 'X'
-
+let win = false
 let gameArray = ['', '', '', '', '', '', '', '', '']
 
 const showRestart = function () {
@@ -21,6 +21,7 @@ $('#start-game').on('click', function () {
   gameArray = ['', '', '', '', '', '', '', '', '']
   $('.col-xs-4').text('')
   turn = 'X'
+  win = false
   startGame()
 })
 
@@ -30,6 +31,7 @@ $('#restart').on('click', function () {
   $('.col-xs-4').text('')
   turn = 'X'
   gameArray = ['', '', '', '', '', '', '', '', '']
+  win = false
   changeMessage(turn + ' is the first player')
   clickEvent()
   $('#restart').css('visibility', 'hidden')
@@ -45,8 +47,9 @@ const clickEvent = function () {
       $(this).text(turn)
       gameArray[$(this).data('id')] = turn
       checkWinner()
-      if (checkWinner()) {
+      if (win) {
         update.over = true
+        return
       } else {
         checkDraw()
         changeTurn()
@@ -98,28 +101,28 @@ const gameOver = () => {
 const checkWinner = function () {
   if ($('.col-xs-4')[0].textContent === $('.col-xs-4')[1].textContent && $('.col-xs-4')[1].textContent === $('.col-xs-4')[2].textContent && $('.col-xs-4')[1].textContent !== '') {
     gameOver()
-    return true
+    win = true
   } else if ($('.col-xs-4')[3].textContent === $('.col-xs-4')[4].textContent && $('.col-xs-4')[4].textContent === $('.col-xs-4')[5].textContent && $('.col-xs-4')[3].textContent !== '') {
     gameOver()
-    return true
+    win = true
   } else if ($('.col-xs-4')[6].textContent === $('.col-xs-4')[7].textContent && $('.col-xs-4')[7].textContent === $('.col-xs-4')[8].textContent && $('.col-xs-4')[6].textContent !== '') {
     gameOver()
-    return true
+    win = true
   } else if ($('.col-xs-4')[0].textContent === $('.col-xs-4')[3].textContent && $('.col-xs-4')[3].textContent === $('.col-xs-4')[6].textContent && $('.col-xs-4')[0].textContent !== '') {
     gameOver()
-    return true
+    win = true
   } else if ($('.col-xs-4')[1].textContent === $('.col-xs-4')[4].textContent && $('.col-xs-4')[4].textContent === $('.col-xs-4')[7].textContent && $('.col-xs-4')[1].textContent !== '') {
     gameOver()
-    return true
+    win = true
   } else if ($('.col-xs-4')[2].textContent === $('.col-xs-4')[5].textContent && $('.col-xs-4')[5].textContent === $('.col-xs-4')[8].textContent && $('.col-xs-4')[2].textContent !== '') {
     gameOver()
-    return true
+    win = true
   } else if ($('.col-xs-4')[0].textContent === $('.col-xs-4')[4].textContent && $('.col-xs-4')[4].textContent === $('.col-xs-4')[8].textContent && $('.col-xs-4')[0].textContent !== '') {
     gameOver()
-    return true
+    win = true
   } else if ($('.col-xs-4')[2].textContent === $('.col-xs-4')[4].textContent && $('.col-xs-4')[4].textContent === $('.col-xs-4')[6].textContent && $('.col-xs-4')[2].textContent !== '') {
     gameOver()
-    return true
+    win = true
   }
 }
 
