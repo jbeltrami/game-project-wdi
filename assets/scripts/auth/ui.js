@@ -3,7 +3,7 @@
 const store = require('../store.js')
 
 const signUpSuccess = (data) => {
-  $('#auth-message').text('Sign-up succesfull. Please Sign In to start the game.')
+  $('#auth-message').text('Sign-up succesful. Please Sign In to start the game.')
   $('#sign-up').css('visibility', 'hidden')
 }
 
