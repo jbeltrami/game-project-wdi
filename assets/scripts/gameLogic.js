@@ -38,17 +38,15 @@ $('#restart').on('click', function () {
 
 const boardInteraction = function () {
   $('#auth-message').text('')
-  const update = {cell: {index: $(this).data('id'), value: turn}}
+  const update = {cell: {index: $(this).data('id'), value: turn}, over: win}
   if (this.textContent === '') {
     $(this).text(turn)
     gameArray[$(this).data('id')] = turn
     checkWinner()
-    if (win) {
-      update.over = true
-      return
-    }
-    changeTurn()
     checkDraw()
+    if (win === true) {
+      update.over = true
+    }
   } else {
     changeMessage('please, pick another square')
     update.over = false
@@ -75,10 +73,11 @@ const checkDraw = function () {
     return element === ('')
   })
   if (result === false) {
+    win = true
     changeMessage('It is a draw!')
     $('.col-xs-4').off('click')
     $('#restart').css('visibility', 'visible')
-    return
+    console.log(win)
   }
 }
 
@@ -92,35 +91,37 @@ const checkWinner = function () {
   if (gameArray[0] === gameArray[1] && gameArray[1] === gameArray[2] && gameArray[1] !== '') {
     win = true
     gameOver()
-    return
+    // return
   } else if (gameArray[3] === gameArray[4] && gameArray[4] === gameArray[5] && gameArray[3] !== '') {
     win = true
     gameOver()
-    return
+    // return
   } else if (gameArray[6] === gameArray[7] && gameArray[7] === gameArray[8] && gameArray[6] !== '') {
     win = true
     gameOver()
-    return
+    // return
   } else if (gameArray[0] === gameArray[3] && gameArray[3] === gameArray[6] && gameArray[0] !== '') {
     win = true
     gameOver()
-    return
+    // return
   } else if (gameArray[1] === gameArray[4] && gameArray[4] === gameArray[7] && gameArray[1] !== '') {
     win = true
     gameOver()
-    return
+    // return
   } else if (gameArray[2] === gameArray[5] && gameArray[5] === gameArray[8] && gameArray[2] !== '') {
     win = true
     gameOver()
-    return
+    // return
   } else if (gameArray[0] === gameArray[4] && gameArray[4] === gameArray[8] && gameArray[0] !== '') {
     win = true
     gameOver()
-    return
+    // return
   } else if (gameArray[2] === gameArray[4] && gameArray[4] === gameArray[6] && gameArray[2] !== '') {
     win = true
     gameOver()
-    return
+    // return
+  } else {
+    changeTurn()
   }
 }
 
