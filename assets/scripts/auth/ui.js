@@ -87,11 +87,11 @@ const getGamesFailure = (data) => {
 
 const getGameSuccess = (data) => {
   // console.log(data)
-  // if (data.game.over) {
-  //   $('#auth-message').text('You have finished that game successfully')
-  // } else {
-  //   $('#auth-message').text('That game was not finished!')
-  $('#auth-message').text("You've played that game before!")
+  if (data.game.over) {
+    $('#auth-message').text('You have finished that game successfully')
+  } else {
+    $('#auth-message').text('That game was not finished!')
+  }
 }
 
 const getGameFailure = (data) => {
