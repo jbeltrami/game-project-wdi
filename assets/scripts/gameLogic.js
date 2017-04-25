@@ -38,17 +38,15 @@ $('#restart').on('click', function () {
 
 const boardInteraction = function () {
   $('#auth-message').text('')
-  const update = {cell: {index: $(this).data('id'), value: turn}}
+  const update = {cell: {index: $(this).data('id'), value: turn}, over: win}
   if (this.textContent === '') {
     $(this).text(turn)
     gameArray[$(this).data('id')] = turn
     checkWinner()
-    if (win) {
-      update.over = true
-      return
-    }
-    changeTurn()
     checkDraw()
+    if (win === true) {
+      update.over = true
+    }
   } else {
     changeMessage('please, pick another square')
     update.over = false
@@ -75,10 +73,11 @@ const checkDraw = function () {
     return element === ('')
   })
   if (result === false) {
+    win = true
     changeMessage('It is a draw!')
     $('.col-xs-4').off('click')
     $('#restart').css('visibility', 'visible')
-    return
+    console.log(win)
   }
 }
 
@@ -121,6 +120,8 @@ const checkWinner = function () {
     win = true
     gameOver()
     // return
+  } else {
+    changeTurn()
   }
 }
 
