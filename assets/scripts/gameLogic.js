@@ -77,7 +77,6 @@ const checkDraw = function () {
     changeMessage('It is a draw!')
     $('.col-xs-4').off('click')
     $('#restart').css('visibility', 'visible')
-    console.log(win)
   }
 }
 
