@@ -26,7 +26,7 @@ const signInSuccess = (data) => {
 }
 
 const signInFailure = (data) => {
-  $('#auth-message').text('Please provide a different combination of username and password. Make sure you have already signed-up')
+  $('#auth-message').text('Please check your username and password. Make sure you have already signed-up')
 }
 
 const changePWSuccess = (data) => {
