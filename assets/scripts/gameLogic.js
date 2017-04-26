@@ -43,7 +43,6 @@ const boardInteraction = function () {
     $(this).text(turn)
     gameArray[$(this).data('id')] = turn
     checkWinner()
-    checkDraw()
     if (win === true) {
       update.over = true
     }
@@ -77,7 +76,8 @@ const checkDraw = function () {
     changeMessage('It is a draw!')
     $('.col-xs-4').off('click')
     $('#restart').css('visibility', 'visible')
-    console.log(win)
+  } else {
+    changeTurn()
   }
 }
 
@@ -121,7 +121,7 @@ const checkWinner = function () {
     gameOver()
     // return
   } else {
-    changeTurn()
+    checkDraw()
   }
 }
 
